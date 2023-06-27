@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Young Grasshopper</title>
+  </head>
+  <body>
+    <h1>Young Grasshopper</h1>
+
+    <!-- Mounting the Vue App - The Vue App only works in this div with an id of app -->
+    <div id="app">
+<!--       displaying the value of data property: dynamic changable value
+      <p>{{title}}</p>
+      <h3>{{name}}{{verb}}{{sentence}}{{age}}</h3>
+      click event handler: increment age by one value using the 'age' data property
+      <button v-on:click="age++">Increase age</button>
+      puts space between buttons
+      &nbsp;
+      click event handler: decrement age by one value using the 'age' data property
+      <button v-on:click="age--">Decrease age</button>
+      <br /><br />
+      Another way to type up an event listener: change the value of the name
+      <div @click="name = 'Sarah'">
+        Change Xolani's name by clicking this sentence.
+      </div>
+      Update the value data property using the 'changeName' method property
+      <div @click="changeName">
+        Change Xolani's name to Palesa by clicking this sentence.
+      </div>
+      <br /><br />
+      Update the value data property using the 'changeName' method property
+      <div @click="changeSentence(' turning ')">
+        Change the sentence by clicking this sentence.
+      </div>
+      <br />
+      <hr /> -->
+      <!-- v-if takes the tag out completely if the value is false -->
+
+      <!-- static conditional rendering: only displays the value if it is true -->
+      <div v-if="true">
+        <!-- displaying the value of the data property: dynamic changable value -->
+        <h3>{{name}}{{sentence}}{{age}}</h3>
+      </div>
+      <!-- static conditional rendering: will not display if it is false -->
+      <div v-if="false">
+        <h3>You will not see this sentence if the conditional is false</h3>
+      </div>
+      
+      <!-- dynamic conditional rendering: value will not display if false -->
+      <div v-if="showSentence">
+        <!-- displaying the value of the data property: dynamic changable value -->
+        <h3>This sentence is being displayed using the data property that is set to true</h3>
+      </div>
+
+      <button @click="toggleShowSentence">
+        <!-- show 'Hide Sentence' text if the value is true -->
+        <span v-if="showSentence">Hide Sentence</span>
+        <!-- show 'Show Sentence' text if the value is false using v-else, an else condition if statement is not true -->
+        <span v-else>Show Sentence</span>
+      </button>
+
+      <!-- v-shows hides the tag out completely if the value is false, uses css code, display:none -->
+      <br>
+      <div v-show="showSentence">Currently showing sentence</div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
